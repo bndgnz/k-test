@@ -2,19 +2,7 @@ import React from "react"
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
 const { BLOCKS } = require('@contentful/rich-text-types')
 
-const options = {
-    renderNode: {
-        [BLOCKS.EMBEDDED_ASSET]: node => {
-          
-          let {file } = node.data.target.fields
-          
-          const src = "https:" + file.url; 
-        
-
-          return  
-        },
-      }
-    }
+ 
 export default function Post({ post }) {
   return (
     <article>
@@ -27,7 +15,7 @@ export default function Post({ post }) {
       <section>
 
           <options />
-       <div className="content-body" dangerouslySetInnerHTML={{__html:documentToHtmlString(post.fields.postContent.fields.content, options) }}></div>
+       <div className="content-body" dangerouslySetInnerHTML={{__html:documentToHtmlString(post.fields.postContent.fields.content) }}></div>
       </section>
       <footer>
     
