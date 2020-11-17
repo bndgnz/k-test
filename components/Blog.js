@@ -1,19 +1,17 @@
 import React from "react"
 import { documentToHtmlString } from "@contentful/rich-text-html-renderer";
-
-import { renderToStaticMarkup } from 'react-dom/server'
 const { BLOCKS } = require('@contentful/rich-text-types')
 
 const options = {
     renderNode: {
         [BLOCKS.EMBEDDED_ASSET]: node => {
-          console.log(node)
-          let { description, title, file } = node.data.target.fields
-          console.log(file.url)
+          
+          let {file } = node.data.target.fields
+          
           const src = "https:" + file.url; 
-          console.log(src)
+        
 
-          return ( <img src={src} />  )
+          return  
         },
       }
     }

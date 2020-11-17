@@ -1,5 +1,5 @@
 import React from "react"
-import Markdown from "react-markdown"
+ 
 
 export default function Post({ post }) {
   return (
@@ -11,7 +11,7 @@ export default function Post({ post }) {
         </small>
       </header>
       <section>
-        <Markdown source={post.fields.body} escapeHtml={true} />
+     
       </section>
       <footer>
     
