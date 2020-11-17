@@ -1,11 +1,11 @@
 import Head from "next/head"
-import Layout from "../components/Layout"
-import PostList from "../components/PostList"
+import Layout from "../../components/Layout"
+import NewsList from "../../components/NewsList"
 
 export default function Index({ posts }) {
   return (
     <Layout>
-      <PostList posts={posts} />
+      <NewsList posts={posts} />
     </Layout>
   )
 }
@@ -19,7 +19,7 @@ export async function getStaticProps() {
 
   // Fetch all entries of content_type `blogPost`
   const posts = await client
-    .getEntries({ content_type: "blog" })
+    .getEntries({ content_type: "news" })
     .then((response) => response.items)
 
   return {

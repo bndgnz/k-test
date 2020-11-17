@@ -1,6 +1,6 @@
 import Head from "next/head"
-import Layout from "../components/Layout"
-import PostList from "../components/PostList"
+import Layout from "../../components/Layout"
+import PostList from "../../components/BlogList"
 
 export default function Index({ posts }) {
   return (
